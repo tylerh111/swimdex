@@ -1,0 +1,207 @@
+# project
+site_name: Swimdex
+site_url: https://tylerh111.github.io/swimdex
+site_author: Tyler Hughes
+site_description: >-
+  Codex for Swim Strokes
+
+# repository
+repo_name: swimdex
+repo_url: https://github.com/tylerh111/swimdex
+edit_uri: edit/main/docs
+
+# copyright
+copyright: Copyright &copy; 2024 Tyler Hughes
+
+# build
+remote_name: origin
+remote_branch: docs
+
+# configuration
+extra:
+  generator: false
+  status:
+    new: Recently Added
+    deprecated: Deprecated
+  social:
+    - icon: fontawesome/brands/git-alt
+      link: https://github.com/tylerh111
+
+extra_css:
+  - stylesheet/banner.css
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+hooks:
+  - docs/plugins/hooks.py
+
+strict: false
+
+validation:
+  absolute_links: warn
+  omitted_files: warn
+  unrecognized_links: warn
+
+watch: [
+  "CONTRIBUTING.md",
+  "LICENSE.md",
+]
+
+# theme
+theme:
+  name: material
+  logo: assets/images/logo.png
+  favicon: assets/images/favicon.ico
+  custom_dir: docs/overrides
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    # - content.code.select
+    # - content.footnote.tooltips
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    # - navigation.footer
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+
+# plugins
+plugins:
+  - blog:
+      authors_file: "{blog}/.authors.yaml"
+  - exclude:
+      glob:
+        - plugins/*
+        - __pycache__/*
+  - redirects:
+  - search:
+
+# extensions
+markdown_extensions:
+  - markdown.extensions.abbr:
+  - markdown.extensions.admonition:
+  - markdown.extensions.attr_list:
+  - markdown.extensions.footnotes:
+  - markdown.extensions.md_in_html:
+  - markdown.extensions.smarty:
+      smart_quotes: false
+  - markdown.extensions.tables:
+  - markdown.extensions.toc:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
+      permalink: ""
+  - markdown_grid_tables:
+  - pymdownx.arithmatex:
+      generic: true
+      block_tag: "pre"
+  - pymdownx.betterem:
+  - pymdownx.blocks.definition:
+  - pymdownx.blocks.html:
+  - pymdownx.caret:
+  - pymdownx.details:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.escapeall:
+      hardbreak: True
+      nbsp: True
+  - pymdownx.highlight:
+      linenums: true
+      linenums_special: 2
+      linenums_style: pymdownx-inline
+      guess_lang: false
+      extend_pygments_lang:
+        - name: pycon3
+          lang: pycon
+          options:
+            python3: true
+  - pymdownx.inlinehilite:
+      custom_inline:
+        - name: math
+          class: arithmatex
+          format: !!python/name:pymdownx.arithmatex.arithmatex_inline_format
+  - pymdownx.keys:
+      separator: "\uff0b"
+  - pymdownx.mark:
+  - pymdownx.magiclink:
+      user: tylerh111
+      repo: swimdex
+      repo_url_shortener: true
+      repo_url_shorthand: true
+      social_url_shorthand: true
+      social_url_shortener: true
+      normalize_issue_symbols: true
+  - pymdownx.progressbar:
+  - pymdownx.saneheaders:
+  - pymdownx.smartsymbols:
+  - pymdownx.snippets:
+  - pymdownx.striphtml:
+  - pymdownx.superfences:
+      preserve_tabs: true
+      custom_fences:
+        - name: math
+          class: arithmatex
+          format: !!python/name:pymdownx.arithmatex.arithmatex_fenced_format
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde:
+
+# navigation
+nav:
+  - Home:
+    - index.md
+    - Contributing: contributing.md
+    - License: license.md
+  - Strokes:
+    - strokes/index.md
+  - Practices:
+    - practices/index.md
+  - Blog:
+    - blog/index.md

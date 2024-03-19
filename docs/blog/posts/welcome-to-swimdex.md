@@ -1,6 +1,14 @@
-# Swimdex
+---
+date: 2024-03-25
+pin: true
+categories:
+    - Release
+    - News
+authors:
+    - tylerh111
+---
 
-![version-badge](https://img.shields.io/badge/version-0.0-blue)
+# Welcome to Swimdex
 
 > Codex for Swim Strokes
 
