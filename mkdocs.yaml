@@ -197,6 +197,7 @@ markdown_extensions:
 nav:
   - Home:
     - index.md
+    - Levels: levels.md
     - Contributing: contributing.md
     - License: license.md
   - Strokes:
