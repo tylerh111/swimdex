@@ -204,6 +204,7 @@ nav:
     - strokes/index.md
     - Freestyle: strokes/free.md
     - Backstroke: strokes/back.md
+    - Breaststroke: strokes/breast.md
   - Practices:
     - practices/index.md
   - Blog:
