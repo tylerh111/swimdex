@@ -203,6 +203,7 @@ nav:
   - Strokes:
     - strokes/index.md
     - Freestyle: strokes/free.md
+    - Backstroke: strokes/back.md
   - Practices:
     - practices/index.md
   - Blog:
